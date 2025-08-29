@@ -13,7 +13,6 @@ body {
     align-items: center;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     height: 40px;
-    
 }
 
 /* Logo */
@@ -23,24 +22,126 @@ body {
     transition: transform 0.3s ease; /* smooth hover animation */
 }
 
-
-
+/* Homepage image wrapper */
+#homepageimg1 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
 
 /* The image itself */
 #homepageimg1 img {
     width: 100%;
+    height: auto;
     display: block;
 }
 
 /* Black fade overlay (left side, short fade out) */
+#homepageimg1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 35%; /* fade ends early */
+    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0));
+    z-index: 1;
+}
 
-.btn{
+/* Text block */
+#homepageimg1 .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    color: #fff;
+    z-index: 2;
+    max-width: 30%; /* keep text within the black fade */
+}
+
+/* Heading */
+#homepageimg1 .overlay-text h1 {
+    margin: 0 0 12px 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Description */
+#homepageimg1 .overlay-text p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Button */
+.btn {
     margin-top: 40px;
     margin-left: 30px;
     border: 2px solid black;
     text-decoration: none;
     background-color: red;
     border-radius: 5px;
-    color:white
-    
+    color: white;
+    padding: 10px 18px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ============================= */
+/* 📱 Mobile Friendly Adjustments */
+/* ============================= */
+@media (max-width: 768px) {
+    #headerdiv {
+        padding: 10px 15px;
+        height: auto;
+    }
+
+    #indexlogo {
+        height: 50px;
+    }
+
+    #homepageimg1::before {
+        width: 60%; /* make fade cover more area on small screens */
+    }
+
+    #homepageimg1 .overlay-text {
+        max-width: 80%;
+        left: 20px;
+    }
+
+    #homepageimg1 .overlay-text h1 {
+        font-size: 24px;
+    }
+
+    #homepageimg1 .overlay-text p {
+        font-size: 14px;
+    }
+
+    .btn {
+        margin: 20px 0 0 20px;
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #homepageimg1 .overlay-text {
+        max-width: 90%;
+        left: 15px;
+    }
+
+    #homepageimg1 .overlay-text h1 {
+        font-size: 20px;
+    }
+
+    #homepageimg1 .overlay-text p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
 }
