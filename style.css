@@ -1,0 +1,46 @@
+/* General reset */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9; /* light background */
+}
+
+/* Header container */
+#headerdiv {
+    background: linear-gradient(135deg, rgb(255, 253, 253), rgb(255, 253, 253)); /* modern gradient */
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    height: 40px;
+    
+}
+
+/* Logo */
+#indexlogo {
+    height: 68px; /* looks cleaner than 200px */
+    margin-left: 0; 
+    transition: transform 0.3s ease; /* smooth hover animation */
+}
+
+
+
+
+/* The image itself */
+#homepageimg1 img {
+    width: 100%;
+    display: block;
+}
+
+/* Black fade overlay (left side, short fade out) */
+
+.btn{
+    margin-top: 40px;
+    margin-left: 30px;
+    border: 2px solid black;
+    text-decoration: none;
+    background-color: red;
+    border-radius: 5px;
+    color:white
+    
+}
